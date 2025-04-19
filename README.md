@@ -4,8 +4,8 @@ services:
     name: website1
     env: node
     rootDir: .
-    buildCommand: npm install
-    startCommand: npm start
+    buildCommand: cd . && npm install
+    startCommand: cd . && npm start
     envVars:
       - key: NODE_ENV
         value: production
