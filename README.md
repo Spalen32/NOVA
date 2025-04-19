@@ -1,1 +1,16 @@
 # NOVA
+services:
+  - type: web
+    name: website1
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: SESSION_SECRET
+        sync: false
+    healthCheckPath: /
+    autoDeploy: true
