@@ -3,6 +3,7 @@ services:
   - type: web
     name: website1
     env: node
+    rootDir: .
     buildCommand: npm install
     startCommand: npm start
     envVars:
@@ -12,5 +13,7 @@ services:
         sync: false
       - key: SESSION_SECRET
         sync: false
+      - key: PORT
+        value: 10000
     healthCheckPath: /
     autoDeploy: true
